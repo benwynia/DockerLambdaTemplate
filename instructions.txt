@@ -1,0 +1,26 @@
+Ensure your aws console access is set up and user has access to AmazonEC2ContainerRegistryFullAccess and AmazonElasticContainerRegistryPublicFullAccess
+
+Update the dockerfile if necessary
+Update the requirements.txt file with dependencies
+Update the lamba function with the lambda function
+Create a new repository in ECR
+
+Build and push the container using the commands provided in ECR
+
+Create a new lamba function and point it to the container URI
+
+# Login
+aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 415302291877.dkr.ecr.us-east-2.amazonaws.com
+
+# Build 
+docker build --provenance=false -t kcs_retention_reporting .
+
+# Tag
+
+# Push
+
+# Redeploy Function
+
+Follow instructions inside ECR to push.
+
+Remember to redeploy lambda function by refreshing "latest"
